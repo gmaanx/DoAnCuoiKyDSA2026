@@ -1,0 +1,190 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\UEH\\Algorithm\\DoAnCuoiKy\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4BF84B16-6CBA-48C2-961A-655F06B461AF}|DoAnCuoiKy.csproj|D:\\UEH\\Algorithm\\DoAnCuoiKy\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BF84B16-6CBA-48C2-961A-655F06B461AF}|DoAnCuoiKy.csproj|solutionrelative:block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BF84B16-6CBA-48C2-961A-655F06B461AF}|DoAnCuoiKy.csproj|D:\\UEH\\Algorithm\\DoAnCuoiKy\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4BF84B16-6CBA-48C2-961A-655F06B461AF}|DoAnCuoiKy.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BF84B16-6CBA-48C2-961A-655F06B461AF}|DoAnCuoiKy.csproj|d:\\ueh\\algorithm\\doancuoiky\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BF84B16-6CBA-48C2-961A-655F06B461AF}|DoAnCuoiKy.csproj|solutionrelative:mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BF84B16-6CBA-48C2-961A-655F06B461AF}|DoAnCuoiKy.csproj|D:\\UEH\\Algorithm\\DoAnCuoiKy\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BF84B16-6CBA-48C2-961A-655F06B461AF}|DoAnCuoiKy.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BF84B16-6CBA-48C2-961A-655F06B461AF}|DoAnCuoiKy.csproj|D:\\UEH\\Algorithm\\DoAnCuoiKy\\classdiagram1.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|",
+      "RelativeMoniker": "D:0:0:{4BF84B16-6CBA-48C2-961A-655F06B461AF}|DoAnCuoiKy.csproj|solutionrelative:classdiagram1.cd||{59B0B277-7DDF-4E36-A3ED-02DAC5B9E2FA}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BF84B16-6CBA-48C2-961A-655F06B461AF}|DoAnCuoiKy.csproj|D:\\UEH\\Algorithm\\DoAnCuoiKy\\hashtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BF84B16-6CBA-48C2-961A-655F06B461AF}|DoAnCuoiKy.csproj|solutionrelative:hashtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BF84B16-6CBA-48C2-961A-655F06B461AF}|DoAnCuoiKy.csproj|D:\\UEH\\Algorithm\\DoAnCuoiKy\\blockcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BF84B16-6CBA-48C2-961A-655F06B461AF}|DoAnCuoiKy.csproj|solutionrelative:blockcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BF84B16-6CBA-48C2-961A-655F06B461AF}|DoAnCuoiKy.csproj|D:\\UEH\\Algorithm\\DoAnCuoiKy\\hashhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BF84B16-6CBA-48C2-961A-655F06B461AF}|DoAnCuoiKy.csproj|solutionrelative:hashhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BF84B16-6CBA-48C2-961A-655F06B461AF}|DoAnCuoiKy.csproj|D:\\UEH\\Algorithm\\DoAnCuoiKy\\blockcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{4BF84B16-6CBA-48C2-961A-655F06B461AF}|DoAnCuoiKy.csproj|solutionrelative:blockcontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4BF84B16-6CBA-48C2-961A-655F06B461AF}|DoAnCuoiKy.csproj|D:\\UEH\\Algorithm\\DoAnCuoiKy\\designhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4BF84B16-6CBA-48C2-961A-655F06B461AF}|DoAnCuoiKy.csproj|solutionrelative:designhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\UEH\\Algorithm\\DoAnCuoiKy\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\UEH\\Algorithm\\DoAnCuoiKy\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-01T05:25:01.408Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ClassDiagram1.cd",
+              "DocumentMoniker": "D:\\UEH\\Algorithm\\DoAnCuoiKy\\ClassDiagram1.cd",
+              "RelativeDocumentMoniker": "ClassDiagram1.cd",
+              "ToolTip": "D:\\UEH\\Algorithm\\DoAnCuoiKy\\ClassDiagram1.cd",
+              "RelativeToolTip": "ClassDiagram1.cd",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000463|",
+              "WhenOpened": "2026-03-31T12:26:39.138Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Block.cs",
+              "DocumentMoniker": "D:\\UEH\\Algorithm\\DoAnCuoiKy\\Block.cs",
+              "RelativeDocumentMoniker": "Block.cs",
+              "ToolTip": "D:\\UEH\\Algorithm\\DoAnCuoiKy\\Block.cs",
+              "RelativeToolTip": "Block.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T03:31:33.946Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HashHelper.cs",
+              "DocumentMoniker": "D:\\UEH\\Algorithm\\DoAnCuoiKy\\HashHelper.cs",
+              "RelativeDocumentMoniker": "HashHelper.cs",
+              "ToolTip": "D:\\UEH\\Algorithm\\DoAnCuoiKy\\HashHelper.cs",
+              "RelativeToolTip": "HashHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T03:30:05.313Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BlockControl.cs",
+              "DocumentMoniker": "D:\\UEH\\Algorithm\\DoAnCuoiKy\\BlockControl.cs",
+              "RelativeDocumentMoniker": "BlockControl.cs",
+              "ToolTip": "D:\\UEH\\Algorithm\\DoAnCuoiKy\\BlockControl.cs",
+              "RelativeToolTip": "BlockControl.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAADEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-25T03:32:20.965Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainForm.cs [Design]",
+              "DocumentMoniker": "D:\\UEH\\Algorithm\\DoAnCuoiKy\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "D:\\UEH\\Algorithm\\DoAnCuoiKy\\MainForm.cs [Design]*",
+              "RelativeToolTip": "MainForm.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T08:53:39.324Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainForm.cs",
+              "DocumentMoniker": "D:\\UEH\\Algorithm\\DoAnCuoiKy\\MainForm.cs",
+              "RelativeDocumentMoniker": "MainForm.cs",
+              "ToolTip": "D:\\UEH\\Algorithm\\DoAnCuoiKy\\MainForm.cs*",
+              "RelativeToolTip": "MainForm.cs*",
+              "ViewState": "AgIAAC4BAAAAAAAAAAAmwBEAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T09:05:52.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DesignHelper.cs",
+              "DocumentMoniker": "D:\\UEH\\Algorithm\\DoAnCuoiKy\\DesignHelper.cs",
+              "RelativeDocumentMoniker": "DesignHelper.cs",
+              "ToolTip": "D:\\UEH\\Algorithm\\DoAnCuoiKy\\DesignHelper.cs",
+              "RelativeToolTip": "DesignHelper.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-26T07:58:49.259Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "HashTable.cs",
+              "DocumentMoniker": "D:\\UEH\\Algorithm\\DoAnCuoiKy\\HashTable.cs",
+              "RelativeDocumentMoniker": "HashTable.cs",
+              "ToolTip": "D:\\UEH\\Algorithm\\DoAnCuoiKy\\HashTable.cs",
+              "RelativeToolTip": "HashTable.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAswA0AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-28T04:08:57.218Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BlockControl.cs [Design]",
+              "DocumentMoniker": "D:\\UEH\\Algorithm\\DoAnCuoiKy\\BlockControl.cs",
+              "RelativeDocumentMoniker": "BlockControl.cs",
+              "ToolTip": "D:\\UEH\\Algorithm\\DoAnCuoiKy\\BlockControl.cs [Design]",
+              "RelativeToolTip": "BlockControl.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-25T03:30:51.256Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{778b5376-ad77-4751-acdc-f3d18343f8dd}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
