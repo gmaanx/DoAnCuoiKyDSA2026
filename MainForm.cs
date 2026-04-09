@@ -11,6 +11,7 @@ namespace DoAnCuoiKy
     {
         private const string GenesisPrevHash = "0";
         private const int MaxImportRows = 50;
+        private static readonly Size InitialClientSize = new Size(1400, 710);
         private const string DATA_PLACEHOLDER = "Nhập dữ liệu cho khối mới...";
         private const string SEARCH_PLACEHOLDER = "Nhập mã Hash cần tìm...";
 
@@ -22,6 +23,7 @@ namespace DoAnCuoiKy
         public MainForm()
         {
             InitializeComponent();
+            ClientSize = InitialClientSize;
             SetupPlaceholders();
             InitializeBlockchainSystem();
         }
@@ -66,6 +68,36 @@ namespace DoAnCuoiKy
 
             AddNewBlockToSystem("Genesis Block", GenesisPrevHash);
             UpdateHashStats();
+        }
+
+        /// Đưa toàn bộ hệ thống về trạng thái ban đầu và chỉ giữ lại Genesis Block.
+        private void ResetBlockchainSystem()
+        {
+            flpBlockchain.SuspendLayout();
+
+            try
+            {
+                flpBlockchain.Controls.Clear();
+                ResetAllBlocksHighlight();
+
+                _blockchain = new LinkedList();
+                _hashTable = new HashTable(100);
+
+                AddNewBlockToSystem("Genesis Block", GenesisPrevHash);
+                UpdateHashStats();
+
+                txtBlockData.Text = DATA_PLACEHOLDER;
+                txtBlockData.StateCommon.Content.Color1 = Color.Gray;
+                txtSearchHash.Text = SEARCH_PLACEHOLDER;
+                txtSearchHash.StateCommon.Content.Color1 = Color.Gray;
+                ActiveControl = null;
+
+                UpdateStatus("Da reset du lieu CSV da nap ve trang thai ban dau.", Color.Green);
+            }
+            finally
+            {
+                flpBlockchain.ResumeLayout();
+            }
         }
 
         /// Tạo, đào, lưu và hiển thị một block mới trong toàn hệ thống.
@@ -311,6 +343,12 @@ namespace DoAnCuoiKy
                     }
                 }
             }
+        }
+
+        /// Reset du lieu da import tu CSV trong ung dung ve trang thai mac dinh.
+        private void resetBtn_Click(object sender, EventArgs e)
+        {
+            ResetBlockchainSystem();
         }
 
         /// Lấy hash của block cuối chuỗi để gắn cho block kế tiếp.

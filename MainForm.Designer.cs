@@ -52,6 +52,7 @@
             this.btnExport = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             this.label4 = new System.Windows.Forms.Label();
             this.difficultyUpDown = new ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown();
+            this.resetBtn = new ComponentFactory.Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kryptonGroup1.Panel)).BeginInit();
             this.kryptonGroup1.Panel.SuspendLayout();
@@ -101,7 +102,8 @@
             // btnSearch
             // 
             this.btnSearch.AutoSize = true;
-            this.btnSearch.Location = new System.Drawing.Point(1218, 32);
+            this.btnSearch.Location = new System.Drawing.Point(1195, 41);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             this.btnSearch.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(55)))));
@@ -116,7 +118,7 @@
             this.btnSearch.OverrideDefault.Border.Width = 1;
             this.btnSearch.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnSearch.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.btnSearch.Size = new System.Drawing.Size(86, 33);
+            this.btnSearch.Size = new System.Drawing.Size(115, 41);
             this.btnSearch.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             this.btnSearch.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             this.btnSearch.StateCommon.Back.ColorAngle = 45F;
@@ -168,9 +170,10 @@
             // 
             // txtSearchHash
             // 
-            this.txtSearchHash.Location = new System.Drawing.Point(750, 32);
+            this.txtSearchHash.Location = new System.Drawing.Point(900, 41);
+            this.txtSearchHash.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearchHash.Name = "txtSearchHash";
-            this.txtSearchHash.Size = new System.Drawing.Size(462, 33);
+            this.txtSearchHash.Size = new System.Drawing.Size(285, 38);
             this.txtSearchHash.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.txtSearchHash.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtSearchHash.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -189,7 +192,8 @@
             // btnValidateChain
             // 
             this.btnValidateChain.AutoSize = true;
-            this.btnValidateChain.Location = new System.Drawing.Point(585, 589);
+            this.btnValidateChain.Location = new System.Drawing.Point(764, 661);
+            this.btnValidateChain.Margin = new System.Windows.Forms.Padding(4);
             this.btnValidateChain.Name = "btnValidateChain";
             this.btnValidateChain.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
             this.btnValidateChain.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
@@ -204,7 +208,7 @@
             this.btnValidateChain.OverrideDefault.Border.Width = 1;
             this.btnValidateChain.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             this.btnValidateChain.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            this.btnValidateChain.Size = new System.Drawing.Size(86, 33);
+            this.btnValidateChain.Size = new System.Drawing.Size(115, 41);
             this.btnValidateChain.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.btnValidateChain.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.btnValidateChain.StateCommon.Back.ColorAngle = 45F;
@@ -259,9 +263,10 @@
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("#9Slide03 Montserrat Bold", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.titleLabel.Location = new System.Drawing.Point(11, 11);
+            this.titleLabel.Location = new System.Drawing.Point(15, 14);
+            this.titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(361, 54);
+            this.titleLabel.Size = new System.Drawing.Size(451, 68);
             this.titleLabel.TabIndex = 23;
             this.titleLabel.Text = "Blockchain Explorer.";
             // 
@@ -270,16 +275,18 @@
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("#9Slide03 Montserrat Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.lblStatus.Location = new System.Drawing.Point(16, 62);
+            this.lblStatus.Location = new System.Drawing.Point(21, 76);
+            this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(63, 27);
+            this.lblStatus.Size = new System.Drawing.Size(78, 34);
             this.lblStatus.TabIndex = 24;
             this.lblStatus.Text = "status";
             // 
             // btnAddBlock
             // 
             this.btnAddBlock.AutoSize = true;
-            this.btnAddBlock.Location = new System.Drawing.Point(493, 589);
+            this.btnAddBlock.Location = new System.Drawing.Point(641, 661);
+            this.btnAddBlock.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddBlock.Name = "btnAddBlock";
             this.btnAddBlock.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             this.btnAddBlock.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(55)))));
@@ -294,7 +301,7 @@
             this.btnAddBlock.OverrideDefault.Border.Width = 1;
             this.btnAddBlock.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.White;
             this.btnAddBlock.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.White;
-            this.btnAddBlock.Size = new System.Drawing.Size(86, 33);
+            this.btnAddBlock.Size = new System.Drawing.Size(115, 41);
             this.btnAddBlock.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             this.btnAddBlock.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             this.btnAddBlock.StateCommon.Back.ColorAngle = 45F;
@@ -346,9 +353,10 @@
             // 
             // txtBlockData
             // 
-            this.txtBlockData.Location = new System.Drawing.Point(20, 589);
+            this.txtBlockData.Location = new System.Drawing.Point(27, 661);
+            this.txtBlockData.Margin = new System.Windows.Forms.Padding(4);
             this.txtBlockData.Name = "txtBlockData";
-            this.txtBlockData.Size = new System.Drawing.Size(462, 33);
+            this.txtBlockData.Size = new System.Drawing.Size(600, 38);
             this.txtBlockData.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.txtBlockData.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtBlockData.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -367,21 +375,23 @@
             // flpBlockchain
             // 
             this.flpBlockchain.AutoScroll = true;
-            this.flpBlockchain.Location = new System.Drawing.Point(20, 89);
+            this.flpBlockchain.Location = new System.Drawing.Point(27, 110);
+            this.flpBlockchain.Margin = new System.Windows.Forms.Padding(4);
             this.flpBlockchain.Name = "flpBlockchain";
-            this.flpBlockchain.Size = new System.Drawing.Size(651, 480);
+            this.flpBlockchain.Size = new System.Drawing.Size(700, 535);
             this.flpBlockchain.TabIndex = 25;
             // 
             // kryptonGroup1
             // 
-            this.kryptonGroup1.Location = new System.Drawing.Point(821, 382);
+            this.kryptonGroup1.Location = new System.Drawing.Point(760, 250);
+            this.kryptonGroup1.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonGroup1.Name = "kryptonGroup1";
             // 
             // kryptonGroup1.Panel
             // 
             this.kryptonGroup1.Panel.Controls.Add(this.lblCapacity);
             this.kryptonGroup1.Panel.Controls.Add(this.label1);
-            this.kryptonGroup1.Size = new System.Drawing.Size(153, 187);
+            this.kryptonGroup1.Size = new System.Drawing.Size(204, 230);
             this.kryptonGroup1.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             this.kryptonGroup1.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             this.kryptonGroup1.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
@@ -399,9 +409,10 @@
             this.lblCapacity.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblCapacity.Font = new System.Drawing.Font("#9Slide03 Montserrat Bold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCapacity.ForeColor = System.Drawing.Color.White;
-            this.lblCapacity.Location = new System.Drawing.Point(0, 111);
+            this.lblCapacity.Location = new System.Drawing.Point(0, 138);
+            this.lblCapacity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCapacity.Name = "lblCapacity";
-            this.lblCapacity.Size = new System.Drawing.Size(57, 68);
+            this.lblCapacity.Size = new System.Drawing.Size(70, 84);
             this.lblCapacity.TabIndex = 28;
             this.lblCapacity.Text = "0";
             this.lblCapacity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -412,22 +423,24 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("#9Slide03 Montserrat Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(58, 0);
+            this.label1.Location = new System.Drawing.Point(77, 0);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 27);
+            this.label1.Size = new System.Drawing.Size(105, 34);
             this.label1.TabIndex = 27;
             this.label1.Text = "Capacity";
             // 
             // kryptonGroup2
             // 
-            this.kryptonGroup2.Location = new System.Drawing.Point(980, 382);
+            this.kryptonGroup2.Location = new System.Drawing.Point(970, 250);
+            this.kryptonGroup2.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonGroup2.Name = "kryptonGroup2";
             // 
             // kryptonGroup2.Panel
             // 
             this.kryptonGroup2.Panel.Controls.Add(this.lblTotalBlocks);
             this.kryptonGroup2.Panel.Controls.Add(this.label2);
-            this.kryptonGroup2.Size = new System.Drawing.Size(153, 187);
+            this.kryptonGroup2.Size = new System.Drawing.Size(204, 230);
             this.kryptonGroup2.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             this.kryptonGroup2.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             this.kryptonGroup2.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
@@ -445,9 +458,10 @@
             this.lblTotalBlocks.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblTotalBlocks.Font = new System.Drawing.Font("#9Slide03 Montserrat Bold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalBlocks.ForeColor = System.Drawing.Color.White;
-            this.lblTotalBlocks.Location = new System.Drawing.Point(0, 111);
+            this.lblTotalBlocks.Location = new System.Drawing.Point(0, 138);
+            this.lblTotalBlocks.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalBlocks.Name = "lblTotalBlocks";
-            this.lblTotalBlocks.Size = new System.Drawing.Size(57, 68);
+            this.lblTotalBlocks.Size = new System.Drawing.Size(70, 84);
             this.lblTotalBlocks.TabIndex = 29;
             this.lblTotalBlocks.Text = "0";
             this.lblTotalBlocks.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -458,22 +472,24 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("#9Slide03 Montserrat Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(31, 0);
+            this.label2.Location = new System.Drawing.Point(41, 0);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 27);
+            this.label2.Size = new System.Drawing.Size(138, 34);
             this.label2.TabIndex = 28;
             this.label2.Text = "Total Blocks";
             // 
             // kryptonGroup3
             // 
-            this.kryptonGroup3.Location = new System.Drawing.Point(1139, 382);
+            this.kryptonGroup3.Location = new System.Drawing.Point(1180, 250);
+            this.kryptonGroup3.Margin = new System.Windows.Forms.Padding(4);
             this.kryptonGroup3.Name = "kryptonGroup3";
             // 
             // kryptonGroup3.Panel
             // 
             this.kryptonGroup3.Panel.Controls.Add(this.lblCollisionCount);
             this.kryptonGroup3.Panel.Controls.Add(this.label3);
-            this.kryptonGroup3.Size = new System.Drawing.Size(153, 187);
+            this.kryptonGroup3.Size = new System.Drawing.Size(204, 230);
             this.kryptonGroup3.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             this.kryptonGroup3.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             this.kryptonGroup3.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
@@ -491,9 +507,10 @@
             this.lblCollisionCount.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblCollisionCount.Font = new System.Drawing.Font("#9Slide03 Montserrat Bold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCollisionCount.ForeColor = System.Drawing.Color.White;
-            this.lblCollisionCount.Location = new System.Drawing.Point(0, 111);
+            this.lblCollisionCount.Location = new System.Drawing.Point(0, 138);
+            this.lblCollisionCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCollisionCount.Name = "lblCollisionCount";
-            this.lblCollisionCount.Size = new System.Drawing.Size(57, 68);
+            this.lblCollisionCount.Size = new System.Drawing.Size(70, 84);
             this.lblCollisionCount.TabIndex = 30;
             this.lblCollisionCount.Text = "0";
             this.lblCollisionCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -504,16 +521,18 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("#9Slide03 Montserrat Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(13, 0);
+            this.label3.Location = new System.Drawing.Point(17, 0);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 27);
+            this.label3.Size = new System.Drawing.Size(168, 34);
             this.label3.TabIndex = 29;
             this.label3.Text = "Collision Count";
             // 
             // btnImport
             // 
             this.btnImport.AutoSize = true;
-            this.btnImport.Location = new System.Drawing.Point(658, 32);
+            this.btnImport.Location = new System.Drawing.Point(651, 41);
+            this.btnImport.Margin = new System.Windows.Forms.Padding(4);
             this.btnImport.Name = "btnImport";
             this.btnImport.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
             this.btnImport.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
@@ -528,7 +547,7 @@
             this.btnImport.OverrideDefault.Border.Width = 1;
             this.btnImport.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             this.btnImport.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            this.btnImport.Size = new System.Drawing.Size(86, 33);
+            this.btnImport.Size = new System.Drawing.Size(115, 41);
             this.btnImport.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.btnImport.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.btnImport.StateCommon.Back.ColorAngle = 45F;
@@ -581,7 +600,8 @@
             // btnExport
             // 
             this.btnExport.AutoSize = true;
-            this.btnExport.Location = new System.Drawing.Point(566, 32);
+            this.btnExport.Location = new System.Drawing.Point(528, 41);
+            this.btnExport.Margin = new System.Windows.Forms.Padding(4);
             this.btnExport.Name = "btnExport";
             this.btnExport.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
             this.btnExport.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
@@ -596,7 +616,7 @@
             this.btnExport.OverrideDefault.Border.Width = 1;
             this.btnExport.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             this.btnExport.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
-            this.btnExport.Size = new System.Drawing.Size(86, 33);
+            this.btnExport.Size = new System.Drawing.Size(115, 41);
             this.btnExport.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.btnExport.StateCommon.Back.Color2 = System.Drawing.Color.White;
             this.btnExport.StateCommon.Back.ColorAngle = 45F;
@@ -651,19 +671,21 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("#9Slide03 Montserrat Bold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.label4.Location = new System.Drawing.Point(1087, 89);
+            this.label4.Location = new System.Drawing.Point(1040, 110);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 27);
+            this.label4.Size = new System.Drawing.Size(114, 34);
             this.label4.TabIndex = 29;
             this.label4.Text = "Difficulty:";
             // 
             // difficultyUpDown
             // 
-            this.difficultyUpDown.Location = new System.Drawing.Point(1184, 89);
+            this.difficultyUpDown.Location = new System.Drawing.Point(1170, 110);
+            this.difficultyUpDown.Margin = new System.Windows.Forms.Padding(4);
             this.difficultyUpDown.Name = "difficultyUpDown";
             this.difficultyUpDown.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.difficultyUpDown.ReadOnly = true;
-            this.difficultyUpDown.Size = new System.Drawing.Size(120, 28);
+            this.difficultyUpDown.Size = new System.Drawing.Size(160, 32);
             this.difficultyUpDown.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             this.difficultyUpDown.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             this.difficultyUpDown.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
@@ -672,15 +694,84 @@
             this.difficultyUpDown.StateCommon.Border.Rounding = 8;
             this.difficultyUpDown.TabIndex = 30;
             // 
+            // resetBtn
+            // 
+            this.resetBtn.AutoSize = true;
+            this.resetBtn.Location = new System.Drawing.Point(775, 41);
+            this.resetBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.resetBtn.Name = "resetBtn";
+            this.resetBtn.OverrideDefault.Back.Color1 = System.Drawing.Color.White;
+            this.resetBtn.OverrideDefault.Back.Color2 = System.Drawing.Color.White;
+            this.resetBtn.OverrideDefault.Back.ColorAngle = 45F;
+            this.resetBtn.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.resetBtn.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(55)))));
+            this.resetBtn.OverrideDefault.Border.ColorAngle = 45F;
+            this.resetBtn.OverrideDefault.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.resetBtn.OverrideDefault.Border.Rounding = 20;
+            this.resetBtn.OverrideDefault.Border.Width = 1;
+            this.resetBtn.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.resetBtn.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.resetBtn.Size = new System.Drawing.Size(115, 41);
+            this.resetBtn.StateCommon.Back.Color1 = System.Drawing.Color.White;
+            this.resetBtn.StateCommon.Back.Color2 = System.Drawing.Color.White;
+            this.resetBtn.StateCommon.Back.ColorAngle = 45F;
+            this.resetBtn.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.resetBtn.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(55)))));
+            this.resetBtn.StateCommon.Border.ColorAngle = 45F;
+            this.resetBtn.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.resetBtn.StateCommon.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.resetBtn.StateCommon.Border.Rounding = 20;
+            this.resetBtn.StateCommon.Border.Width = 1;
+            this.resetBtn.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.resetBtn.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.resetBtn.StateCommon.Content.ShortText.Font = new System.Drawing.Font("#9Slide03 Montserrat Bold", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetBtn.StatePressed.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.resetBtn.StatePressed.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(55)))));
+            this.resetBtn.StatePressed.Back.ColorAngle = 135F;
+            this.resetBtn.StatePressed.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.resetBtn.StatePressed.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(55)))));
+            this.resetBtn.StatePressed.Border.ColorAngle = 45F;
+            this.resetBtn.StatePressed.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.resetBtn.StatePressed.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.resetBtn.StatePressed.Border.Rounding = 20;
+            this.resetBtn.StatePressed.Border.Width = 1;
+            this.resetBtn.StatePressed.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.resetBtn.StatePressed.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.resetBtn.StatePressed.Content.ShortText.ColorAngle = 45F;
+            this.resetBtn.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.resetBtn.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(55)))));
+            this.resetBtn.StateTracking.Back.ColorAngle = 135F;
+            this.resetBtn.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
+            this.resetBtn.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(61)))), ((int)(((byte)(55)))));
+            this.resetBtn.StateTracking.Border.ColorAngle = 45F;
+            this.resetBtn.StateTracking.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.resetBtn.StateTracking.Border.GraphicsHint = ComponentFactory.Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            this.resetBtn.StateTracking.Border.Rounding = 20;
+            this.resetBtn.StateTracking.Border.Width = 1;
+            this.resetBtn.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.resetBtn.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.resetBtn.StateTracking.Content.ShortText.ColorAngle = 45F;
+            this.resetBtn.TabIndex = 27;
+            this.resetBtn.Values.Text = "Reset";
+            this.resetBtn.Click += new System.EventHandler(this.resetBtn_Click);
+            // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1316, 634);
+            this.ClientSize = new System.Drawing.Size(1400, 710);
             this.Controls.Add(this.difficultyUpDown);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnExport);
+            this.Controls.Add(this.resetBtn);
             this.Controls.Add(this.btnImport);
             this.Controls.Add(this.kryptonGroup3);
             this.Controls.Add(this.kryptonGroup2);
@@ -693,7 +784,7 @@
             this.Controls.Add(this.btnAddBlock);
             this.Controls.Add(this.btnValidateChain);
             this.Controls.Add(this.btnSearch);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "MainForm";
             this.Palette = this.kryptonPalette1;
             this.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.Custom;
@@ -744,6 +835,7 @@
         private ComponentFactory.Krypton.Toolkit.KryptonButton btnExport;
         private System.Windows.Forms.Label label4;
         private ComponentFactory.Krypton.Toolkit.KryptonNumericUpDown difficultyUpDown;
+        private ComponentFactory.Krypton.Toolkit.KryptonButton resetBtn;
     }
 }
 
