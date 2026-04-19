@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -9,15 +10,17 @@ namespace DoAnCuoiKy
 {
     public partial class MainForm : KryptonForm
     {
-        private const string GenesisPrevHash = "0";
+        private const bool EnableSearchComparisonBenchmark = true; // Chỉnh thành true để đo và ghi log
+        private const string GenesisPrevHash = "0000000000000000000000000000000000000000000000000000000000000000";
         private const int MaxImportRows = 50;
         private static readonly Size InitialClientSize = new Size(1400, 710);
         private const string DATA_PLACEHOLDER = "Nhập dữ liệu cho khối mới...";
-        private const string SEARCH_PLACEHOLDER = "Nhập mã Hash cần tìm...";
-
+        private const string SEARCH_PLACEHOLDER = "Nhập Hash hoặc nội dung block...";
+        
         private LinkedList _blockchain;
         private HashTable _hashTable;
         private int _difficulty;
+        private readonly AutoCompleteStringCollection _searchSuggestions = new AutoCompleteStringCollection();
 
         /// Khởi tạo form chính, chuẩn bị giao diện và dữ liệu blockchain ban đầu.
         public MainForm()
@@ -26,6 +29,11 @@ namespace DoAnCuoiKy
             ClientSize = InitialClientSize;
             SetupPlaceholders();
             InitializeBlockchainSystem();
+
+            if (EnableSearchComparisonBenchmark)
+            {
+                RunSearchComparisonBenchmarkSeries();
+            }
         }
 
         /// Khởi tạo placeholder và trạng thái hiển thị ban đầu cho các ô nhập liệu.
@@ -36,6 +44,9 @@ namespace DoAnCuoiKy
 
             txtSearchHash.Text = SEARCH_PLACEHOLDER;
             txtSearchHash.StateCommon.Content.Color1 = Color.Gray;
+            txtSearchHash.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            txtSearchHash.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtSearchHash.AutoCompleteCustomSource = _searchSuggestions;
 
             txtBlockData.Enter += (s, e) => DesignHelper.HandlePlaceholder(txtBlockData, DATA_PLACEHOLDER, true);
             txtBlockData.Leave += (s, e) => DesignHelper.HandlePlaceholder(txtBlockData, DATA_PLACEHOLDER, false);
@@ -92,7 +103,8 @@ namespace DoAnCuoiKy
                 txtSearchHash.StateCommon.Content.Color1 = Color.Gray;
                 ActiveControl = null;
 
-                UpdateStatus("Da reset du lieu CSV da nap ve trang thai ban dau.", Color.Green);
+                RefreshSearchSuggestions();
+                UpdateStatus("Da reset du lieu ve trang thai ban dau.", Color.Green);
             }
             finally
             {
@@ -116,6 +128,7 @@ namespace DoAnCuoiKy
             _hashTable.Insert(newBlock.Hash, _blockchain.Tail);
 
             RenderBlockToUI(newBlock);
+            RefreshSearchSuggestions();
             UpdateStatus($"Đã đào Block #{newBlock.Index} thành công! Thời gian: {stopwatch.ElapsedMilliseconds} ms | Nonce: {newBlock.Nonce}", Color.Green);
             UpdateHashStats();
         }
@@ -125,7 +138,7 @@ namespace DoAnCuoiKy
         {
             string dataInput = txtBlockData.Text.Trim();
 
-            if (string.IsNullOrEmpty(dataInput) || dataInput == DATA_PLACEHOLDER)
+            if (string.IsNullOrWhiteSpace(dataInput) || dataInput == DATA_PLACEHOLDER)
             {
                 UpdateStatus("Dữ liệu khởi tạo khối không được để trống.", Color.Red);
                 return;
@@ -160,22 +173,31 @@ namespace DoAnCuoiKy
                 return;
             }
 
-            BlockNode resultNode = _hashTable.Search(targetHash);
-            if (resultNode != null)
-            {
-                Block foundBlock = resultNode.Data;
-                UpdateStatus($"Tìm thấy: Block #{foundBlock.Index} | Data: {foundBlock.Data}", Color.Blue);
+            Stopwatch searchStopwatch = Stopwatch.StartNew();
+            SearchResult result = FindBlockBySmartQuery(targetHash);
+            searchStopwatch.Stop();
 
-                if (flpBlockchain.Controls.Count > foundBlock.Index)
+            if (result != null)
+            {
+                UpdateStatus(
+                    $"Tìm thấy trong {searchStopwatch.Elapsed.TotalMilliseconds:F2} ms theo {result.MatchMode}: Block #{result.Block.Index} | Data: {result.Block.Data}",
+                    Color.Blue);
+
+                if (string.Equals(result.MatchMode, "Hash chính xác", StringComparison.Ordinal))
                 {
-                    BlockControl targetCtrl = (BlockControl)flpBlockchain.Controls[foundBlock.Index];
+                    LogSearchComparisons(result.Block.Hash, searchStopwatch.Elapsed);
+                }
+
+                if (flpBlockchain.Controls.Count > result.Block.Index)
+                {
+                    BlockControl targetCtrl = (BlockControl)flpBlockchain.Controls[result.Block.Index];
                     targetCtrl.HighlightSearch();
                     flpBlockchain.ScrollControlIntoView(targetCtrl);
                 }
             }
             else
             {
-                UpdateStatus("Mã Hash không tồn tại trong hệ thống.", Color.Red);
+                UpdateStatus($"Không tìm thấy block phù hợp sau {searchStopwatch.Elapsed.TotalMilliseconds:F2} ms.", Color.Red);
             }
         }
 
@@ -219,18 +241,38 @@ namespace DoAnCuoiKy
                 {
                     if (control is BlockControl blockControl)
                     {
-                        blockControl.ResetSearchHighlight();
+                        blockControl.MarkAsValid();
                     }
                 }
             }
             else
             {
-                UpdateStatus($"Phát hiện bất thường dữ liệu tại Block #{errorIndex}.", Color.Red);
+                UpdateStatus($"Chain INVALID at Block {errorIndex}", Color.Red);
+
+                for (int i = 0; i < flpBlockchain.Controls.Count; i++)
+                {
+                    if (!(flpBlockchain.Controls[i] is BlockControl blockControl))
+                    {
+                        continue;
+                    }
+
+                    if (i < errorIndex)
+                    {
+                        blockControl.MarkAsValid();
+                    }
+                    else if (i == errorIndex)
+                    {
+                        blockControl.MarkAsInvalid();
+                    }
+                    else
+                    {
+                        blockControl.MarkAsAffectedInvalid();
+                    }
+                }
 
                 if (errorIndex >= 0 && errorIndex < flpBlockchain.Controls.Count)
                 {
                     BlockControl errorControl = (BlockControl)flpBlockchain.Controls[errorIndex];
-                    errorControl.MarkAsInvalid();
                     flpBlockchain.ScrollControlIntoView(errorControl);
                 }
             }
@@ -311,10 +353,21 @@ namespace DoAnCuoiKy
 
                             while ((line = sr.ReadLine()) != null)
                             {
+                                if (string.IsNullOrWhiteSpace(line))
+                                {
+                                    continue;
+                                }
+
                                 string[] columns = line.Split(',');
                                 if (columns.Length > 0)
                                 {
                                     string kaggleData = columns[0].Trim();
+
+                                    if (string.IsNullOrWhiteSpace(kaggleData))
+                                    {
+                                        continue;
+                                    }
+
                                     AddNewBlockToSystem(kaggleData, GetLatestBlockHash());
                                     importCount++;
 
@@ -351,10 +404,180 @@ namespace DoAnCuoiKy
             ResetBlockchainSystem();
         }
 
+        /// Làm mới danh sách gợi ý tìm kiếm từ toàn bộ hash và data hiện có trong chuỗi.
+        private void RefreshSearchSuggestions()
+        {
+            _searchSuggestions.Clear();
+
+            if (_blockchain == null)
+            {
+                return;
+            }
+
+            HashSet<string> uniqueSuggestions = new HashSet<string>(StringComparer.OrdinalIgnoreCase);
+            BlockNode current = _blockchain.Head;
+
+            while (current != null)
+            {
+                Block block = current.Data;
+
+                if (!string.IsNullOrWhiteSpace(block.Hash) && uniqueSuggestions.Add(block.Hash))
+                {
+                    _searchSuggestions.Add(block.Hash);
+                }
+
+                if (!string.IsNullOrWhiteSpace(block.Data) && uniqueSuggestions.Add(block.Data))
+                {
+                    _searchSuggestions.Add(block.Data);
+                }
+
+                current = current.Next;
+            }
+        }
+
+        /// Thực hiện tìm kiếm thông minh: ưu tiên hash chính xác, sau đó hash theo tiền tố, rồi đến data.
+        private SearchResult FindBlockBySmartQuery(string query)
+        {
+            if (string.IsNullOrWhiteSpace(query))
+            {
+                return null;
+            }
+
+            string normalizedQuery = query.Trim();
+            BlockNode exactHashNode = _hashTable.Search(normalizedQuery);
+            if (exactHashNode != null)
+            {
+                return new SearchResult(exactHashNode.Data, "Hash chính xác");
+            }
+
+            SearchResult hashPrefixResult = FindBlockByPredicate(
+                block => block.Hash.StartsWith(normalizedQuery, StringComparison.OrdinalIgnoreCase),
+                "Hash gần đúng");
+            if (hashPrefixResult != null)
+            {
+                return hashPrefixResult;
+            }
+
+            SearchResult exactDataResult = FindBlockByPredicate(
+                block => string.Equals(block.Data, normalizedQuery, StringComparison.OrdinalIgnoreCase),
+                "Data chính xác");
+            if (exactDataResult != null)
+            {
+                return exactDataResult;
+            }
+
+            return FindBlockByPredicate(
+                block => block.Data.IndexOf(normalizedQuery, StringComparison.OrdinalIgnoreCase) >= 0,
+                "Data gần đúng");
+        }
+
+        /// Duyệt chuỗi để tìm block đầu tiên thỏa điều kiện lọc.
+        private SearchResult FindBlockByPredicate(Func<Block, bool> predicate, string matchMode)
+        {
+            BlockNode current = _blockchain.Head;
+            while (current != null)
+            {
+                if (predicate(current.Data))
+                {
+                    return new SearchResult(current.Data, matchMode);
+                }
+
+                current = current.Next;
+            }
+
+            return null;
+        }
+
+        /// Ghi số phép so sánh của LinkedList và HashTable ra Output window cho truy vết.
+        private void LogSearchComparisons(string targetHash, TimeSpan elapsed)
+        {
+            _blockchain.ResetComparisons();
+            _hashTable.ResetComparisons();
+
+            BlockNode linkedListResult = _blockchain.SearchByHash(targetHash);
+            BlockNode hashTableResult = _hashTable.Search(targetHash);
+
+            double ratio = _hashTable.Comparisons == 0
+                ? 0
+                : (double)_blockchain.Comparisons / _hashTable.Comparisons;
+
+            Debug.WriteLine(
+                $"[SearchComparison] n={_blockchain.Count}, targetHash={targetHash}, " +
+                $"LinkedListComparisons={_blockchain.Comparisons}, " +
+                $"HashTableComparisons={_hashTable.Comparisons}, Ratio={ratio:F2}, " +
+                $"ElapsedMs={elapsed.TotalMilliseconds:F4}, " +
+                $"LinkedListFound={(linkedListResult != null)}, HashTableFound={(hashTableResult != null)}");
+        }
+
+        /// Chạy nhanh bộ benchmark chuẩn để ghi ra Output window các mốc n được yêu cầu.
+        private void RunSearchComparisonBenchmarkSeries()
+        {
+            int[] benchmarkSizes = { 10, 50, 100, 500, 1000, 5000, 10000 };
+
+            Debug.WriteLine("========== SEARCH COMPARISON BENCHMARK ==========");
+            foreach (int blockCount in benchmarkSizes)
+            {
+                RunSearchComparisonBenchmark(blockCount);
+            }
+            Debug.WriteLine("=================================================");
+        }
+
+        /// Tạo dữ liệu in-memory và đo số phép so sánh khi tìm block ở vị trí n/2.
+        private void RunSearchComparisonBenchmark(int blockCount)
+        {
+            LinkedList benchmarkList = new LinkedList();
+            HashTable benchmarkTable = new HashTable(100);
+            string prevHash = GenesisPrevHash;
+            string targetHash = string.Empty;
+            int targetIndex = blockCount / 2;
+
+            for (int i = 0; i < blockCount; i++)
+            {
+                Block block = new Block(i, $"BENCHMARK-{i}", prevHash);
+                benchmarkList.AddLast(block);
+                benchmarkTable.Insert(block.Hash, benchmarkList.Tail);
+
+                if (i == targetIndex)
+                {
+                    targetHash = block.Hash;
+                }
+
+                prevHash = block.Hash;
+            }
+
+            benchmarkList.ResetComparisons();
+            benchmarkTable.ResetComparisons();
+
+            benchmarkList.SearchByHash(targetHash);
+            benchmarkTable.Search(targetHash);
+
+            double ratio = benchmarkTable.Comparisons == 0
+                ? 0
+                : (double)benchmarkList.Comparisons / benchmarkTable.Comparisons;
+
+            Debug.WriteLine(
+                $"[Benchmark] n={blockCount}, targetIndex={targetIndex}, " +
+                $"LinkedListComparisons={benchmarkList.Comparisons}, " +
+                $"HashTableComparisons={benchmarkTable.Comparisons}, Ratio={ratio:F2}, " +
+                $"Collisions={benchmarkTable.GetCollisionCount()}");
+        }
+
         /// Lấy hash của block cuối chuỗi để gắn cho block kế tiếp.
         private string GetLatestBlockHash()
         {
             return _blockchain.Tail != null ? _blockchain.Tail.Data.Hash : GenesisPrevHash;
+        }
+
+        private sealed class SearchResult
+        {
+            public SearchResult(Block block, string matchMode)
+            {
+                Block = block;
+                MatchMode = matchMode;
+            }
+
+            public Block Block { get; }
+            public string MatchMode { get; }
         }
     }
 }

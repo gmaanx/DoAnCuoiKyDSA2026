@@ -26,10 +26,12 @@ namespace DoAnCuoiKy
         private BlockNode _head;
         private BlockNode _tail;
         private int _count;
+        private int _comparisons;
 
         public BlockNode Head { get { return _head; } }
         public BlockNode Tail { get { return _tail; } }
         public int Count { get { return _count; } }
+        public int Comparisons { get { return _comparisons; } }
 
         /// Khởi tạo danh sách liên kết rỗng để lưu chuỗi block.
         public LinkedList()
@@ -37,6 +39,7 @@ namespace DoAnCuoiKy
             _head = null;
             _tail = null;
             _count = 0;
+            _comparisons = 0;
         }
 
         // Thêm block vào cuối danh sách để bảo toàn thứ tự hình thành chuỗi.
@@ -56,6 +59,35 @@ namespace DoAnCuoiKy
             }
 
             _count++;
+        }
+
+        /// Đưa bộ đếm số phép so sánh về 0 trước khi thực hiện benchmark.
+        public void ResetComparisons()
+        {
+            _comparisons = 0;
+        }
+
+        /// Tìm node theo hash bằng duyệt tuyến tính để phục vụ so sánh với HashTable.
+        public BlockNode SearchByHash(string hash)
+        {
+            if (string.IsNullOrEmpty(hash))
+            {
+                return null;
+            }
+
+            BlockNode current = _head;
+            while (current != null)
+            {
+                _comparisons++;
+                if (current.Data.Hash == hash)
+                {
+                    return current;
+                }
+
+                current = current.Next;
+            }
+
+            return null;
         }
     }
 }

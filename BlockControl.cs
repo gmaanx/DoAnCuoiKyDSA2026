@@ -11,7 +11,11 @@ namespace DoAnCuoiKy
 
         private readonly Color _blockFound = Color.FromArgb(127, 183, 126);
         private readonly Color _titleFound = Color.FromArgb(47, 107, 63);
+        private readonly Color _validBlock = Color.FromArgb(198, 232, 197);
+        private readonly Color _validTitle = Color.FromArgb(39, 92, 54);
         private readonly Color _invalidBlock = Color.FromArgb(217, 104, 104);
+        private readonly Color _invalidAffectedBlock = Color.FromArgb(241, 192, 192);
+        private readonly Color _invalidTitle = Color.FromArgb(126, 37, 37);
 
         private Block _boundBlock;
 
@@ -44,6 +48,21 @@ namespace DoAnCuoiKy
         public void MarkAsInvalid()
         {
             BackColor = _invalidBlock;
+            lblIndex.ForeColor = _invalidTitle;
+        }
+
+        /// Đánh dấu block bị ảnh hưởng gián tiếp do liên kết chuỗi phía trước đã sai.
+        public void MarkAsAffectedInvalid()
+        {
+            BackColor = _invalidAffectedBlock;
+            lblIndex.ForeColor = _invalidTitle;
+        }
+
+        /// Đánh dấu block đang ở trạng thái hợp lệ trong lần kiểm tra hiện tại.
+        public void MarkAsValid()
+        {
+            BackColor = _validBlock;
+            lblIndex.ForeColor = _validTitle;
         }
 
         /// Cho phép mô phỏng thay đổi dữ liệu trực tiếp để phục vụ bài toán kiểm tra tính toàn vẹn.

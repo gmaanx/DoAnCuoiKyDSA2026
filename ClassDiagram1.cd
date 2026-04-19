@@ -1,42 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="DoAnCuoiKy.DesignHelper" Collapsed="true">
-    <Position X="6.5" Y="0.75" Width="1.5" />
+  <Class Name="DoAnCuoiKy.MainForm" Collapsed="true">
+    <Position X="2.5" Y="1" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAFAAAAAAAAAABAAKgAAAAAAAAACAAAAAgAAAAAAA=</HashCode>
-      <FileName>DesignHelper.cs</FileName>
+      <HashCode>ACIE4IIMACAEcBAAACqAKAACAATAgIQggAYQAQUxJQI=</HashCode>
+      <FileName>MainForm.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DoAnCuoiKy.HashHelper">
-    <Position X="1.25" Y="0.75" Width="1.5" />
+  <Class Name="DoAnCuoiKy.BlockControl" Collapsed="true">
+    <Position X="1.25" Y="2" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAEBCAFCEIABAAAUCAAAACQEAAAAAAARAAAAAAgAQ=</HashCode>
+      <FileName>BlockControl.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DoAnCuoiKy.HashHelper" Collapsed="true">
+    <Position X="3.5" Y="4.25" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACA=</HashCode>
       <FileName>HashHelper.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DoAnCuoiKy.HashEntry">
-    <Position X="1.25" Y="2.25" Width="1.5" />
+  <Class Name="DoAnCuoiKy.Block" Collapsed="true">
+    <Position X="3.5" Y="3.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAABBAIAAAAACAAiIAAAAAAAQBBQAAEAAAAACAA=</HashCode>
+      <FileName>Block.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DoAnCuoiKy.HashEntry" Collapsed="true">
+    <Position X="5.75" Y="2.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AhAAAAAAAAAAAAQAAACAAAAAAAAAAAAgAAAgAAAAAAA=</HashCode>
       <FileName>HashTable.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DoAnCuoiKy.HashTable">
-    <Position X="4.75" Y="2.25" Width="1.5" />
+  <Class Name="DoAnCuoiKy.HashTable" Collapsed="true">
+    <Position X="8" Y="2.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAAUAAAAAAAAAAAAAAAAQCAAAAAAAIAACAIAAgAAA=</HashCode>
       <FileName>HashTable.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DoAnCuoiKy.BlockNode">
-    <Position X="3" Y="2.25" Width="1.5" />
+  <Class Name="DoAnCuoiKy.BlockNode" Collapsed="true">
+    <Position X="3.5" Y="2.75" Width="2" />
     <TypeIdentifier>
       <HashCode>AgAAAAAABAAAAAAAAAAAAAAAAAAAABAgAAAAAAAAAAA=</HashCode>
       <FileName>LinkedList.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="DoAnCuoiKy.LinkedList">
-    <Position X="6.5" Y="2.25" Width="1.5" />
+  <Class Name="DoAnCuoiKy.LinkedList" Collapsed="true">
+    <Position X="3.5" Y="2" Width="2" />
     <TypeIdentifier>
       <HashCode>AAAAABAAAAAQAIAAAAAAAAQAAAAAAAAAAACCAAABAAA=</HashCode>
       <FileName>LinkedList.cs</FileName>

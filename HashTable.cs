@@ -31,9 +31,11 @@ namespace DoAnCuoiKy
         private readonly int _capacity;
         private readonly HashEntry[] _buckets;
         private int _count;
+        private int _comparisons;
 
         public int Capacity { get { return _capacity; } }
         public int Count { get { return _count; } }
+        public int Comparisons { get { return _comparisons; } }
 
         /// Khởi tạo bảng băm với số lượng bucket cố định.
         public HashTable(int capacity = 100)
@@ -46,6 +48,7 @@ namespace DoAnCuoiKy
             _capacity = capacity;
             _buckets = new HashEntry[_capacity];
             _count = 0;
+            _comparisons = 0;
         }
 
         /// Ánh xạ key vào bucket index bằng mã băm nội bộ của .NET.
@@ -97,6 +100,7 @@ namespace DoAnCuoiKy
 
             while (current != null)
             {
+                _comparisons++;
                 if (current.Key == key)
                 {
                     return current.Value;
@@ -106,6 +110,12 @@ namespace DoAnCuoiKy
             }
 
             return null;
+        }
+
+        /// Đưa bộ đếm số phép so sánh về 0 trước khi thực hiện benchmark.
+        public void ResetComparisons()
+        {
+            _comparisons = 0;
         }
 
         // Collision được tính bằng số phần tử vượt quá số bucket đang được sử dụng.
