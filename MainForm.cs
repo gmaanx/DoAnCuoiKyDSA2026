@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using ComponentFactory.Krypton.Toolkit;
 
@@ -20,6 +21,7 @@ namespace DoAnCuoiKy
         private LinkedList _blockchain;
         private HashTable _hashTable;
         private int _difficulty;
+        private bool _isMining;
         private readonly AutoCompleteStringCollection _searchSuggestions = new AutoCompleteStringCollection();
 
         /// Khởi tạo form chính, chuẩn bị giao diện và dữ liệu blockchain ban đầu.
@@ -133,9 +135,43 @@ namespace DoAnCuoiKy
             UpdateHashStats();
         }
 
-        /// Xử lý thao tác thêm block từ dữ liệu do người dùng nhập.
-        private void btnAddBlock_Click(object sender, EventArgs e)
+        /// Thực hiện đào block trên luồng nền để giao diện vẫn phản hồi khi difficulty cao.
+        private async Task AddNewBlockToSystemAsync(string data, string prevHash)
         {
+            int newIndex = _blockchain.Count;
+            Block newBlock = new Block(newIndex, data, prevHash);
+
+            _difficulty = (int)difficultyUpDown.Value;
+            Stopwatch stopwatch = Stopwatch.StartNew();
+            SetMiningUiState(true, $"Đang đào Block #{newIndex}... Vui lòng chờ.");
+
+            try
+            {
+                await Task.Run(() => newBlock.MineBlock(_difficulty));
+            }
+            finally
+            {
+                stopwatch.Stop();
+                SetMiningUiState(false);
+            }
+
+            _blockchain.AddLast(newBlock);
+            _hashTable.Insert(newBlock.Hash, _blockchain.Tail);
+
+            RenderBlockToUI(newBlock);
+            RefreshSearchSuggestions();
+            UpdateStatus($"Đã đào Block #{newBlock.Index} thành công! Thời gian: {stopwatch.ElapsedMilliseconds} ms | Nonce: {newBlock.Nonce}", Color.Green);
+            UpdateHashStats();
+        }
+
+        /// Xử lý thao tác thêm block từ dữ liệu do người dùng nhập.
+        private async void btnAddBlock_Click(object sender, EventArgs e)
+        {
+            if (_isMining)
+            {
+                return;
+            }
+
             string dataInput = txtBlockData.Text.Trim();
 
             if (string.IsNullOrWhiteSpace(dataInput) || dataInput == DATA_PLACEHOLDER)
@@ -144,7 +180,7 @@ namespace DoAnCuoiKy
                 return;
             }
 
-            AddNewBlockToSystem(dataInput, GetLatestBlockHash());
+            await AddNewBlockToSystemAsync(dataInput, GetLatestBlockHash());
             txtBlockData.Text = string.Empty;
             ActiveControl = null;
         }
@@ -334,8 +370,14 @@ namespace DoAnCuoiKy
         }
 
         /// Nhập dữ liệu từ CSV, mỗi dòng hợp lệ sẽ được chuyển thành một block mới.
-        private void btnImport_Click(object sender, EventArgs e)
+        private async void btnImport_Click(object sender, EventArgs e)
         {
+            if (_isMining)
+            {
+                UpdateStatus("Vui lòng đợi quá trình đào hiện tại hoàn tất trước khi import.", Color.Orange);
+                return;
+            }
+
             using (OpenFileDialog ofd = new OpenFileDialog() { Filter = "CSV file (*.csv)|*.csv", Title = "Chọn Dataset từ Kaggle" })
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
@@ -368,7 +410,7 @@ namespace DoAnCuoiKy
                                         continue;
                                     }
 
-                                    AddNewBlockToSystem(kaggleData, GetLatestBlockHash());
+                                    await AddNewBlockToSystemAsync(kaggleData, GetLatestBlockHash());
                                     importCount++;
 
                                     // Giới hạn số block import để giữ giao diện phản hồi tốt trong WinForms.
@@ -401,7 +443,29 @@ namespace DoAnCuoiKy
         /// Reset du lieu da import tu CSV trong ung dung ve trang thai mac dinh.
         private void resetBtn_Click(object sender, EventArgs e)
         {
+            if (_isMining)
+            {
+                UpdateStatus("Không thể reset trong khi đang đào block.", Color.Orange);
+                return;
+            }
+
             ResetBlockchainSystem();
+        }
+
+        /// Khóa các thao tác thay đổi dữ liệu trong lúc mining đang chạy trên nền.
+        private void SetMiningUiState(bool isMining, string statusMessage = null)
+        {
+            _isMining = isMining;
+            btnAddBlock.Enabled = !isMining;
+            btnImport.Enabled = !isMining;
+            resetBtn.Enabled = !isMining;
+            difficultyUpDown.Enabled = !isMining;
+            txtBlockData.Enabled = !isMining;
+
+            if (!string.IsNullOrWhiteSpace(statusMessage))
+            {
+                UpdateStatus(statusMessage, Color.DarkOrange);
+            }
         }
 
         /// Làm mới danh sách gợi ý tìm kiếm từ toàn bộ hash và data hiện có trong chuỗi.

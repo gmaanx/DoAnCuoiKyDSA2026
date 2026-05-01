@@ -173,7 +173,7 @@
             this.txtSearchHash.Location = new System.Drawing.Point(900, 41);
             this.txtSearchHash.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearchHash.Name = "txtSearchHash";
-            this.txtSearchHash.Size = new System.Drawing.Size(285, 38);
+            this.txtSearchHash.Size = new System.Drawing.Size(285, 33);
             this.txtSearchHash.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.txtSearchHash.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtSearchHash.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -266,7 +266,7 @@
             this.titleLabel.Location = new System.Drawing.Point(15, 14);
             this.titleLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(451, 68);
+            this.titleLabel.Size = new System.Drawing.Size(361, 54);
             this.titleLabel.TabIndex = 23;
             this.titleLabel.Text = "Blockchain Explorer.";
             // 
@@ -278,7 +278,7 @@
             this.lblStatus.Location = new System.Drawing.Point(758, 212);
             this.lblStatus.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(78, 34);
+            this.lblStatus.Size = new System.Drawing.Size(63, 27);
             this.lblStatus.TabIndex = 24;
             this.lblStatus.Text = "status";
             // 
@@ -356,7 +356,7 @@
             this.txtBlockData.Location = new System.Drawing.Point(27, 661);
             this.txtBlockData.Margin = new System.Windows.Forms.Padding(4);
             this.txtBlockData.Name = "txtBlockData";
-            this.txtBlockData.Size = new System.Drawing.Size(600, 38);
+            this.txtBlockData.Size = new System.Drawing.Size(600, 33);
             this.txtBlockData.StateCommon.Back.Color1 = System.Drawing.Color.White;
             this.txtBlockData.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.txtBlockData.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -409,10 +409,10 @@
             this.lblCapacity.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblCapacity.Font = new System.Drawing.Font("#9Slide03 Montserrat Bold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCapacity.ForeColor = System.Drawing.Color.White;
-            this.lblCapacity.Location = new System.Drawing.Point(0, 138);
+            this.lblCapacity.Location = new System.Drawing.Point(0, 154);
             this.lblCapacity.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCapacity.Name = "lblCapacity";
-            this.lblCapacity.Size = new System.Drawing.Size(70, 84);
+            this.lblCapacity.Size = new System.Drawing.Size(57, 68);
             this.lblCapacity.TabIndex = 28;
             this.lblCapacity.Text = "0";
             this.lblCapacity.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -426,7 +426,7 @@
             this.label1.Location = new System.Drawing.Point(77, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 34);
+            this.label1.Size = new System.Drawing.Size(84, 27);
             this.label1.TabIndex = 27;
             this.label1.Text = "Capacity";
             // 
@@ -458,10 +458,10 @@
             this.lblTotalBlocks.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblTotalBlocks.Font = new System.Drawing.Font("#9Slide03 Montserrat Bold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalBlocks.ForeColor = System.Drawing.Color.White;
-            this.lblTotalBlocks.Location = new System.Drawing.Point(0, 138);
+            this.lblTotalBlocks.Location = new System.Drawing.Point(0, 154);
             this.lblTotalBlocks.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotalBlocks.Name = "lblTotalBlocks";
-            this.lblTotalBlocks.Size = new System.Drawing.Size(70, 84);
+            this.lblTotalBlocks.Size = new System.Drawing.Size(57, 68);
             this.lblTotalBlocks.TabIndex = 29;
             this.lblTotalBlocks.Text = "0";
             this.lblTotalBlocks.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -475,7 +475,7 @@
             this.label2.Location = new System.Drawing.Point(41, 0);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(138, 34);
+            this.label2.Size = new System.Drawing.Size(111, 27);
             this.label2.TabIndex = 28;
             this.label2.Text = "Total Blocks";
             // 
@@ -507,10 +507,10 @@
             this.lblCollisionCount.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.lblCollisionCount.Font = new System.Drawing.Font("#9Slide03 Montserrat Bold", 30F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCollisionCount.ForeColor = System.Drawing.Color.White;
-            this.lblCollisionCount.Location = new System.Drawing.Point(0, 138);
+            this.lblCollisionCount.Location = new System.Drawing.Point(0, 154);
             this.lblCollisionCount.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCollisionCount.Name = "lblCollisionCount";
-            this.lblCollisionCount.Size = new System.Drawing.Size(70, 84);
+            this.lblCollisionCount.Size = new System.Drawing.Size(57, 68);
             this.lblCollisionCount.TabIndex = 30;
             this.lblCollisionCount.Text = "0";
             this.lblCollisionCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -524,7 +524,7 @@
             this.label3.Location = new System.Drawing.Point(17, 0);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(168, 34);
+            this.label3.Size = new System.Drawing.Size(136, 27);
             this.label3.TabIndex = 29;
             this.label3.Text = "Collision Count";
             // 
@@ -674,7 +674,7 @@
             this.label4.Location = new System.Drawing.Point(1040, 110);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 34);
+            this.label4.Size = new System.Drawing.Size(91, 27);
             this.label4.TabIndex = 29;
             this.label4.Text = "Difficulty:";
             // 
@@ -685,7 +685,7 @@
             this.difficultyUpDown.Name = "difficultyUpDown";
             this.difficultyUpDown.PaletteMode = ComponentFactory.Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.difficultyUpDown.ReadOnly = true;
-            this.difficultyUpDown.Size = new System.Drawing.Size(160, 32);
+            this.difficultyUpDown.Size = new System.Drawing.Size(160, 28);
             this.difficultyUpDown.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             this.difficultyUpDown.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(32)))), ((int)(((byte)(30)))));
             this.difficultyUpDown.StateCommon.Border.DrawBorders = ((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders)((((ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Top | ComponentFactory.Krypton.Toolkit.PaletteDrawBorders.Bottom) 
